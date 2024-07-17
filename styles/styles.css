@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
+html, body, h2, h3, p, time, div {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-size: 10px;
+    height: 100%;
+}
+
+:root {
+    --c-snow: #fff;
+    --c-soot: #000;
+    --c-soot-light: #111;
+    --c-grey-middle: #7f7f7f;
+    --c-accent-1: #f4d04e;
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 2.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--c-accent-1);
+}
+
+.card {
+    width: min(100%, 38.4rem);
+    padding: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Figtree', sans-serif;
+    border: 1px solid var(--c-soot);
+    border-radius: 2rem;
+    background-color: var(--c-snow);
+    color: var(--c-soot-light);
+    filter: drop-shadow(0.8rem 0.8rem 0 var(--c-soot));
+}
+
+.card__image, .card__content {
+    margin-bottom: 2.4rem;
+}
+
+.card-image {
+    width: 100%;
+    height: 20rem;
+    border-radius: 1rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card-content__item:not(:last-child) {
+    margin-bottom: 1.2rem;
+}
+
+.card-content__headline {
+    width: fit-content;
+    padding: 0.4rem 1.2rem;
+    font-weight: 800;
+    font-size: 1.2rem;
+    line-height: 150%;
+    border-radius: 0.4rem;
+    background-color: var(--c-accent-1);
+}
+
+.card-content__time {
+    display: block;
+    font-family: 'Figtree', sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 150%;
+}
+
+.card-content__title {
+    font-weight: 800;
+    font-size: 2rem;
+    line-height: 150%;
+    transition: color 0.2s;
+    cursor: url("/assets/images/handcursor.svg"), pointer;
+}
+
+.card-content__title:hover {
+    color: var(--c-accent-1);
+}
+
+.card-content__description {
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 150%;
+    color: var(--c-grey-middle);
+}
+
+.card-author {
+    display: flex;
+    align-items: center;
+}
+
+.card-author__image {
+    margin-right: 1.2rem;
+    width: 3.2rem;
+    height: 3.2rem;
+}
+
+.card-author__name {
+    font-weight: 800;
+    font-size: 1.4rem;
+    line-height: 150%;
+}
+
+@media (min-width: 1024px) {
+    .card {
+        filter: drop-shadow(1.6rem 1.6rem 0 var(--c-soot));
+    }
+    .card-content__headline {
+        font-size: 1.4rem;
+    }
+
+    .card-content__time {
+        font-size: 1.4rem;
+    }
+
+    .card-content__title {
+        font-size: 2.4rem;
+    }
+
+    .card-content__description {
+        font-size: 1.6rem;
+    }
+}
+
+.attribution {
+    max-width: 38.4rem;
+    padding: 1.2rem;
+    position: absolute;
+    bottom: 0;
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-align: center;
+    backdrop-filter: blur(5px);
+}
+
+.attribution a {
+    cursor: url("/assets/images/handcursor.svg"), pointer;
+}
