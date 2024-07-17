@@ -1,9 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('./mobile.css') (max-width: 600px);
+@import url('./desktop.css') (min-width: 601px);
 
 html, body, h2, h3, p, time, div {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+a,
+button,
+label,
+div {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 html, body {
@@ -17,6 +26,7 @@ html, body {
     --c-soot-light: #111;
     --c-grey-middle: #7f7f7f;
     --c-accent-1: #f4d04e;
+    --cursor-custom: url("../assets/images/handcursor.svg"), pointer;
 }
 
 .wrapper {
@@ -38,9 +48,12 @@ html, body {
     font-family: 'Figtree', sans-serif;
     border: 1px solid var(--c-soot);
     border-radius: 2rem;
+    box-shadow: 0.8rem 0.8rem 0 var(--c-soot);
     background-color: var(--c-snow);
     color: var(--c-soot-light);
-    filter: drop-shadow(0.8rem 0.8rem 0 var(--c-soot));
+    transform: translateY(-1px);
+    cursor: var(--cursor-custom);
+    transition: box-shadow 0.2s;
 }
 
 .card__image, .card__content {
@@ -63,7 +76,7 @@ html, body {
     width: fit-content;
     padding: 0.4rem 1.2rem;
     font-weight: 800;
-    font-size: 1.2rem;
+    font-size: var(--fs-base);
     line-height: 150%;
     border-radius: 0.4rem;
     background-color: var(--c-accent-1);
@@ -73,25 +86,30 @@ html, body {
     display: block;
     font-family: 'Figtree', sans-serif;
     font-weight: 500;
-    font-size: 1.2rem;
+    font-size: var(--fs-base);
     line-height: 150%;
 }
 
 .card-content__title {
     font-weight: 800;
-    font-size: 2rem;
+    font-size: var(--fs-large);
     line-height: 150%;
     transition: color 0.2s;
-    cursor: url("../assets/images/handcursor.svg"), pointer;
 }
 
-.card-content__title:hover {
-    color: var(--c-accent-1);
+@media (hover: hover) {
+    .card:hover .card-content__title {
+        color: var(--c-accent-1);
+    }
+}
+
+.card:focus {
+    box-shadow: 1.6rem 1.6rem 0 var(--c-soot);
 }
 
 .card-content__description {
     font-weight: 500;
-    font-size: 1.4rem;
+    font-size: var(--fs-small);
     line-height: 150%;
     color: var(--c-grey-middle);
 }
@@ -113,38 +131,17 @@ html, body {
     line-height: 150%;
 }
 
-@media (min-width: 1024px) {
-    .card {
-        filter: drop-shadow(1.6rem 1.6rem 0 var(--c-soot));
-    }
-    .card-content__headline {
-        font-size: 1.4rem;
-    }
-
-    .card-content__time {
-        font-size: 1.4rem;
-    }
-
-    .card-content__title {
-        font-size: 2.4rem;
-    }
-
-    .card-content__description {
-        font-size: 1.6rem;
-    }
-}
-
 .attribution {
     max-width: 38.4rem;
     padding: 1.2rem;
     position: absolute;
     bottom: 0;
     font-size: 1.4rem;
-    font-weight: 400;
+    font-weight: 500;
     text-align: center;
     backdrop-filter: blur(5px);
 }
 
 .attribution a {
-    cursor: url("../assets/images/handcursor.svg"), pointer;
+    cursor: var(--cursor-custom);
 }
