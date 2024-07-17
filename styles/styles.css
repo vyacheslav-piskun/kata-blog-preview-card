@@ -82,7 +82,7 @@ html, body {
     font-size: 2rem;
     line-height: 150%;
     transition: color 0.2s;
-    cursor: url("/assets/images/handcursor.svg"), pointer;
+    cursor: url("../assets/images/handcursor.svg"), pointer;
 }
 
 .card-content__title:hover {
