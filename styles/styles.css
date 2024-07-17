@@ -146,5 +146,5 @@ html, body {
 }
 
 .attribution a {
-    cursor: url("/assets/images/handcursor.svg"), pointer;
+    cursor: url("../assets/images/handcursor.svg"), pointer;
 }
